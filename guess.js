@@ -147,6 +147,14 @@ function validateGuess(guess) {
   }
 }
 
+
+function displayGuess(guess) {
+  userInput.value = '';
+  guessSlot.innerHTML += `${guess}, `;
+  numGuess++;
+  remaining.innerHTML = `${11 - numGuess} `;
+}
+
 function checkGuess(guess) {
   if (guess === randomNumber) {
     displayMessage(`You guessed it right`);
@@ -158,12 +166,7 @@ function checkGuess(guess) {
   }
 }
 
-function displayGuess(guess) {
-  userInput.value = '';
-  guessSlot.innerHTML += `${guess}, `;
-  numGuess++;
-  remaining.innerHTML = `${11 - numGuess} `;
-}
+
 
 function displayMessage(message) {
   lowOrHi.innerHTML = `<h2>${message}</h2>`;
